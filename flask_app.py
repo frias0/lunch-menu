@@ -28,6 +28,17 @@ def api_list_restaurants():
     return jsonify(main.list_restaurants())
 
 
+@app.route('/api/restaurant/dsw/<name>')
+@cache.cached(timeout=3600)
+def api_get_restaurant_dsw(name):
+    data = main.get_restaurant(name)
+    if not data:
+        abort(404)
+    data['menu'] = [{'dish': entry} for entry in data['menu']]
+    return jsonify(data)
+
+
+
 @app.route('/api/restaurant/<name>')
 @cache.cached(timeout=3600)
 def api_get_restaurant(name):
