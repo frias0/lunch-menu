@@ -21,7 +21,6 @@ def display_available():
                '</html>')
     return content
 
-
 @app.route('/api/restaurants')
 @cache.cached(timeout=3600)
 def api_list_restaurants():
@@ -36,7 +35,6 @@ def api_get_restaurant_dsw(name):
         abort(404)
     data['menu'] = [{'dish': entry} for entry in data['menu']]
     return jsonify(data)
-
 
 
 @app.route('/api/restaurant/<name>')
@@ -58,3 +56,25 @@ def make_menu_ki():
 @cache.cached(timeout=3600)
 def make_menu_uu():
     return main.gen_uu_menu()
+
+
+# API for "nbis task"
+@app.route('/api/nbis/')
+def list_entities():
+    return jsonify({'entities': ['restaurant']})
+
+
+@app.route('/api/nbis/restaurant')
+@cache.cached(timeout=3600)
+def api_list_restaurants():
+    return jsonify({'restaurants': main.list_restaurants()})
+
+
+@app.route('/api/nbis/restaurant/dsw/<name>')
+@cache.cached(timeout=3600)
+def api_get_restaurant_dsw(name):
+    data = main.get_restaurant(name)
+    if not data:
+        abort(404)
+    data['menu'] = [{'dish': entry} for entry in data['menu']]
+    return jsonify({'restaurant': data})
