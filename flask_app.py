@@ -60,19 +60,19 @@ def make_menu_uu():
 
 # API for "nbis task"
 @app.route('/api/nbis/')
-def list_entities():
+def nbis_list_entities():
     return jsonify({'entities': ['restaurant']})
 
 
 @app.route('/api/nbis/restaurant')
 @cache.cached(timeout=3600)
-def api_list_restaurants():
+def nbis_api_list_restaurants():
     return jsonify({'restaurants': main.list_restaurants()})
 
 
 @app.route('/api/nbis/restaurant/dsw/<name>')
 @cache.cached(timeout=3600)
-def api_get_restaurant_dsw(name):
+def nbis_api_get_restaurant(name):
     data = main.get_restaurant(name)
     if not data:
         abort(404)
