@@ -15,6 +15,11 @@ def display_available():
                '<title>Restaurant Menu Parser</title>' +
                '</head>' +
                '<body>' +
+               '<span style="font-weight: bold">' +
+               '<p>This page is no longer updated. The current version can be found at ' +
+               '<a href="https://menu.dckube.scilifelab.se/">' + 
+               'https://menu.dckube.scilifelab.se/</a>.</p>' +
+               '</span>' +
                '<p><a href="ki">Campus Solna (KI)</a></p>' +
                '<p><a href="uu">Campus Uppsala (BMC)</a></p>' +
                '</body>' +

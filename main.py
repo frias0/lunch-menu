@@ -163,8 +163,12 @@ def gen_ki_menu():
     '''
     Generate a menu for restaurants at KI
     '''
-    output = ''
-    output += '\n'.join(page_start(ps.get_weekday(), str(ps.get_day()), ps.get_month()))
+    output = '\n'.join(page_start(ps.get_weekday(), str(ps.get_day()), ps.get_month()))
+    output += ('<span style="font-weight: bold">' +
+               '<p>This page is no longer updated. The current version can be found at ' +
+               '<a href="https://menu.dckube.scilifelab.se/">' +
+               'https://menu.dckube.scilifelab.se/</a>.</p>' +
+               '</span>')
     output += activate_parsers(KI, REST_DATA)
     output += '\n'.join(page_end())
     return output
@@ -174,8 +178,13 @@ def gen_uu_menu():
     '''
     Generate a menu for restaurants at UU
     '''
-    output = ''
-    output += '\n'.join(page_start(ps.get_weekday(), str(ps.get_day()), ps.get_month()))
+    output = '\n'.join(page_start(ps.get_weekday(), str(ps.get_day()), ps.get_month()))
+    output += ('<span style="font-weight: bold">' +
+               '<p>This page is no longer updated. The current version can be found at ' +
+               '<a href="https://menu.dckube.scilifelab.se/">' +
+               'https://menu.dckube.scilifelab.se/</a>.</p>' +
+               '</span>')
+
     output += activate_parsers(UU, REST_DATA)
     output += '\n'.join(page_end())
 
