@@ -16,8 +16,4 @@ jobs:
         with:
           packages: package
           requirements: backend/requirements.txt
-          no-deps: true
-          pre: true
-          upgrade: true
-          extra: extra options
       - run: python main.py kista
