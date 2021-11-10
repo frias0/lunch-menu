@@ -18,8 +18,6 @@ jobs:
           requirements: backend/requirements.txt
           no-deps: true
           pre: true
-          editable: editable
-          platform: ':all:'
           upgrade: true
           extra: extra options
       - run: python main.py kista
