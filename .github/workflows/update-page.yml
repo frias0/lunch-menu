@@ -1,0 +1,25 @@
+name: Publish Docker image
+on:
+  push:
+    branches:
+      - master
+  release:
+    types: [published]
+jobs:
+  push_to_registry:
+    name: Update frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate pages
+        uses: actions/checkout@v2
+      - uses: BSFishy/pip-action@v1
+        with:
+          packages: package
+          requirements: backend/requirements.txt
+          no-deps: true
+          pre: true
+          editable: editable
+          platform: ':all:'
+          upgrade: true
+          extra: extra options
+      - run: python main.py kista

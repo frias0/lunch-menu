@@ -71,11 +71,17 @@ MAPPER = {
     "hubben": ps.parse_hubben,
     "rudbeck": ps.parse_rudbeck,
     "tallrik": ps.parse_tallrik,
+    "uppereast": ps.parse_uppereast,
+    "nordicforum": ps.parse_nordicforum,
+    "eaterynod": ps.parse_eaterynod
 }
+
 
 KI = ("jorpes", "glada", "haga", "hjulet", "jons", "livet", "nanna", "svarta")
 
 UU = ("bikupan", "dufva", "hubben", "rudbeck", "tallrik")
+
+KA = ("uppereast", "nordicforum", "eaterynod")
 
 
 def activate_parsers(restaurants, restaurant_data):
@@ -154,7 +160,7 @@ def parse_restaurant_names(rest_names):
     """
     restaurants = list()
     for param in rest_names:
-        if param not in KI and param not in UU:
+        if param not in KI and param not in UU and param not in KA:
             raise ValueError("{} not a valid restaurant".format(param))
         restaurants.append(param.lower())
     return restaurants
@@ -192,19 +198,33 @@ def gen_uu_menu():
     sys.stderr.write(output + "\n")
     return output
 
+def gen_kista_menu():
+    """
+    Generate a menu for restaurants at KISTA
+    """
+    output = ""
+    output += "\n".join(page_start(ps.get_weekday(), str(ps.get_day()), ps.get_month()))
+    output += activate_parsers(KISTA, REST_DATA)
+    output += "\n".join(page_end())
+
+    sys.stderr.write(output + "\n")
+    return output
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2 or "-h" in sys.argv:
-        print_usage(KI + UU)
+        print_usage(KI + UU + KA)
         sys.exit()
 
     REST_NAMES_IN = tuple()
     if "all" in sys.argv[1:]:
-        REST_NAMES_IN += KI + UU
+        REST_NAMES_IN += KI + UU + KA
     elif "ki" in sys.argv[1:]:
         REST_NAMES_IN += KI
     elif "uu" in sys.argv[1:]:
         REST_NAMES_IN += UU
+    elif "ka" in sys.argv[1:]:
+        REST_NAMES_IN += KA
     else:
         REST_NAMES_IN = [param for param in sys.argv[1:] if param != "-r"]
 
