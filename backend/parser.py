@@ -414,14 +414,11 @@ def parse_uppereast(res_data):
     """
     Parse the menu of uppereast
     """
-    print("doing uppereast")
     data = {"menu": []}
     soup = get_parser(res_data["menuUrl"])
 
     menu = soup.find("div", {"class": "meny"})
     day = False
-    print("contents: " + str(len(menu.contents)))
-
     for line in menu.contents:
         if day:
             if line.name is not None:
