@@ -445,7 +445,6 @@ def parse_nordicforum(res_data):
     for child in itr:
         if child.name == "thead":
             if get_weekday().capitalize() in child.find("h3").string:
-                print("found day")
                 next(itr)
                 for item in next(itr):
                     if item.name:
