@@ -52,7 +52,7 @@ def restaurant(func):
             "title": res_data["name"],
             "location": res_data["region"],
             "url": res_data["homepage"],
-            "map_url": res_data["osm"],
+            "map_url": res_data["gmaps"],
         }
         try:
             data.update(func(res_data))

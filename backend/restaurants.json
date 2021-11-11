@@ -10,6 +10,7 @@
       "menuUrl": "http://uppereast.kvartersmenyn.se/",
       "name": "Upper East",
       "osm": "https://www.openstreetmap.org/#map=18/59.4067337/17.9552885",
+      "gmaps": "https://goo.gl/maps/MmJbik1ySQEpph9f6",
       "region": "Kista"
     },
     {
@@ -22,6 +23,7 @@
       "menuUrl": "https://nordicforum.gastrogate.com/lunchmeny/",
       "name": "Nordic forum",
       "osm": "https://www.openstreetmap.org/#map=19/59.406202/17.948127",
+      "gmaps": "https://goo.gl/maps/jkqmpViSHGTX1vYL7",
       "region": "Kista"
     },
     {
@@ -34,18 +36,20 @@
       "menuUrl": "http://eaterykistanod.kvartersmenyn.se/",
       "name": "Eatery Nod",
       "osm": "http://www.openstreetmap.org/#map=19/59.4070624/17.9431243",
+      "gmaps": "https://goo.gl/maps/WNgA2nDRT7wLNj3u5",
       "region": "Kista"
     },
     {
       "coordinate": [
-        59.4051968,
-        17.9520938
+        59.4051995,
+        17.9499051
       ],
       "homepage": "https://www.tastory.com/sv/vara-restauranger--cafeer/restauranger/tastory-kista/",
       "identifier": "tastorykista",
       "menuUrl": "https://www.tastory.com/modules/MenuRss/MenuRss/CurrentWeek?costNumber=6209&language=sv",
       "name": "Tastory Kista",
-      "osm": "http://www.openstreetmap.org/#map=19/59.4051968/17.9520938",
+      "osm": "http://www.openstreetmap.org/#map=19/59.4051995/17.9499051",
+      "gmaps": "https://goo.gl/maps/iWLKnkp519uWTM6S7",
       "region": "Kista"
     },
     {
@@ -58,6 +62,7 @@
       "menuUrl": "https://vasakronan.foodbycoor.se/glaze/sv/meny",
       "name": "Science Tower Glaze",
       "osm": "http://www.openstreetmap.org/#map=19/59.4017353/17.9441746",
+      "gmaps": "https://goo.gl/maps/hrip3hnk7Vq5L8zD8",
       "region": "Kista"
     }
   ]
