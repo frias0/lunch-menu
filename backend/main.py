@@ -131,7 +131,7 @@ def page_end():
 
     lines = list()
     lines.append(
-        '<div class="endnote">Updated: '+
+        '<div class="endnote">'+
         datetime.now(pytz.timezone("Europe/Stockholm")).strftime("%Y-%m-%d %H:%M:%S") +
         '</div>'
     )
