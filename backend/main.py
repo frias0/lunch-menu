@@ -34,8 +34,11 @@ Main script for choosing what restaurant parsers to use.
 import json
 import os
 import sys
-
+from datetime import date, datetime, tzinfo
+import pytz
+import locale
 import parser as ps
+from time import timezone
 
 __location__ = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 REST_FILENAME = os.path.join(__location__, "restaurants.json")
@@ -125,11 +128,12 @@ def page_end():
     """
     Print the closure of tags etc
     """
+
     lines = list()
     lines.append(
-        '<div class="endnote">Code available at '
-        + '<a href="https://github.com/talavis/lunch-menu">'
-        + "Github</a>. Patches are very welcome.</div>"
+        '<div class="endnote">Updated: '+
+        datetime.now(pytz.timezone("Europe/Stockholm")).strftime("%Y-%m-%d %H:%M:%S") +
+        '</div>'
     )
     lines.append("</body>")
     lines.append("</html>")

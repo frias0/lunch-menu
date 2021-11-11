@@ -440,6 +440,17 @@ def parse_nordicforum(res_data):
     data = {"menu": []}
     soup = get_parser(res_data["menuUrl"])
 
+    menu = soup.find("table", {"class": "lunch_menu"})
+    itr = iter(menu.children)
+    for child in itr:
+        if child.name == "thead":
+            if get_weekday().capitalize() in child.find("h3").string:
+                print("found day")
+                next(itr)
+                for item in next(itr):
+                    if item.name:
+                        data["menu"].append(item.find("td", {"class": "td_title"}).text.strip())
+
     return data
 
 @restaurant
