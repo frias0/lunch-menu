@@ -456,7 +456,7 @@ def parse_nordicforum(res_data):
 @restaurant
 def parse_tastorykista(res_data):
     """
-    Parse the menu of nordic forum
+    Parse the menu of tastory kista
     """
     data = {"menu": []}
     soup = get_parser(res_data["menuUrl"])
@@ -472,3 +472,18 @@ def parse_tastorykista(res_data):
     return data
 
 
+@restaurant
+def parse_glaze(res_data):
+    """
+    Parse the menu of glaze
+    """
+    data = {"menu": []}
+    soup = get_parser(res_data["menuUrl"])
+
+    menu = soup.find("div", {"class", "week-container"})
+    for day in menu.find_all("div", {"class", "day"}):
+        if get_weekday().capitalize() in day.find("h2"):
+            for dish in day.find_all("div", {"class", "title"}):
+                data["menu"].append(dish.text.strip())
+            break
+    return data

@@ -47,6 +47,18 @@
       "name": "Tastory Kista",
       "osm": "http://www.openstreetmap.org/#map=19/59.4051968/17.9520938",
       "region": "Kista"
+    },
+    {
+      "coordinate": [
+        59.4017353,
+        17.9441746
+      ],
+      "homepage": "https://vasakronan.foodbycoor.se/glaze/sv/meny",
+      "identifier": "glaze",
+      "menuUrl": "https://vasakronan.foodbycoor.se/glaze/sv/meny",
+      "name": "Science Tower Glaze",
+      "osm": "http://www.openstreetmap.org/#map=19/59.4017353/17.9441746",
+      "region": "Kista"
     }
   ]
 }
