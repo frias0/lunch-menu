@@ -31,7 +31,7 @@
       ],
       "homepage": "https://eatery.se/kista-nod",
       "identifier": "eaterynod",
-      "menuUrl": "https://eatery.se/meny/521/lunchmeny-7",
+      "menuUrl": "http://eaterykistanod.kvartersmenyn.se/",
       "name": "Eatery Nod",
       "osm": "http://www.openstreetmap.org/#map=19/59.4070624/17.9431243",
       "region": "Kista"

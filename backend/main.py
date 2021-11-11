@@ -33,6 +33,7 @@ Main script for choosing what restaurant parsers to use.
 
 import json
 import os
+import re
 import sys
 from datetime import date, datetime, tzinfo
 import pytz
@@ -74,9 +75,7 @@ MAPPER = {
     "hubben": ps.parse_hubben,
     "rudbeck": ps.parse_rudbeck,
     "tallrik": ps.parse_tallrik,
-    "uppereast": ps.parse_uppereast,
     "nordicforum": ps.parse_nordicforum,
-    "eaterynod": ps.parse_eaterynod
 }
 
 
@@ -93,6 +92,8 @@ def activate_parsers(restaurants, restaurant_data):
     """
     output = []
     for restaurant in restaurants:
+        if ".kvartersmenyn.se" in restaurant_data[restaurant]["menuUrl"]:
+            MAPPER[restaurant] = ps.parse_kvartersmenyn
         data = MAPPER[restaurant](restaurant_data[restaurant])
         output.append(
             f"""<div class="title"><a href="{data['url']}">{data['title']}</a>"""

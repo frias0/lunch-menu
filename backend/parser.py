@@ -366,6 +366,29 @@ def parse_nanna(res_data):
 
     return data
 
+@restaurant
+def parse_kvartersmenyn(res_data):
+    """
+    Parse the menus on kvartersmenyn.se
+    """
+    data = {"menu": []}
+    soup = get_parser(res_data["menuUrl"])
+
+    menu = soup.find("div", {"class": "meny"})
+    day = False
+    for line in menu.contents:
+        if day:
+            if line.name is not None:
+                if "br" in line.name:
+                    continue
+                if "strong" in line.name:
+                    day=False
+                    break
+            data["menu"].append(line)
+        if get_weekday().capitalize() in line:
+            day = True
+    return data
+
 
 @restaurant
 def parse_rudbeck(res_data):
@@ -410,29 +433,6 @@ def parse_tallrik(res_data):
 
 
 @restaurant
-def parse_uppereast(res_data):
-    """
-    Parse the menu of uppereast
-    """
-    data = {"menu": []}
-    soup = get_parser(res_data["menuUrl"])
-
-    menu = soup.find("div", {"class": "meny"})
-    day = False
-    for line in menu.contents:
-        if day:
-            if line.name is not None:
-                if "br" in line.name:
-                    continue
-                if "strong" in line.name:
-                    day=False
-                    break
-            data["menu"].append(line)
-        if get_weekday().capitalize() in line:
-            day = True
-    return data
-
-@restaurant
 def parse_nordicforum(res_data):
     """
     Parse the menu of nordic forum
@@ -452,13 +452,4 @@ def parse_nordicforum(res_data):
 
     return data
 
-@restaurant
-def parse_eaterynod(res_data):
-    """
-    Parse the menu of eatery nod
-    """
-    data = {"menu": []}
-    soup = get_parser(res_data["menuUrl"])
-
-    return data
 
