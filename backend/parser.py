@@ -35,6 +35,7 @@ import datetime
 from datetime import date
 import re
 import sys
+import html
 
 import requests
 from bs4 import BeautifulSoup
@@ -449,6 +450,24 @@ def parse_nordicforum(res_data):
                 for item in next(itr):
                     if item.name:
                         data["menu"].append(item.find("td", {"class": "td_title"}).text.strip())
+
+    return data
+
+@restaurant
+def parse_tastorykista(res_data):
+    """
+    Parse the menu of nordic forum
+    """
+    data = {"menu": []}
+    soup = get_parser(res_data["menuUrl"])
+
+    menu = soup.find("channel")
+    for child in menu.find_all("item"):
+        if get_weekday().capitalize() in child.find("title").string:
+            day = BeautifulSoup(child.find("description").string, "html.parser")
+            for dish in day.find("p").children:
+                if dish.name is None:
+                    data["menu"].append(dish)
 
     return data
 

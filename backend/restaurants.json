@@ -35,6 +35,18 @@
       "name": "Eatery Nod",
       "osm": "http://www.openstreetmap.org/#map=19/59.4070624/17.9431243",
       "region": "Kista"
+    },
+    {
+      "coordinate": [
+        59.4051968,
+        17.9520938
+      ],
+      "homepage": "https://www.tastory.com/sv/vara-restauranger--cafeer/restauranger/tastory-kista/",
+      "identifier": "tastorykista",
+      "menuUrl": "https://www.tastory.com/modules/MenuRss/MenuRss/CurrentWeek?costNumber=6209&language=sv",
+      "name": "Tastory Kista",
+      "osm": "http://www.openstreetmap.org/#map=19/59.4051968/17.9520938",
+      "region": "Kista"
     }
   ]
 }
