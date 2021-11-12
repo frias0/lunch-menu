@@ -133,6 +133,7 @@ def page_end():
     """
 
     lines = list()
+    lines.append("</div>")
     lines.append(
         '<div class="endnote">'+
         datetime.now(pytz.timezone("Europe/Stockholm")).strftime("%Y-%m-%d %H:%M:%S") +
@@ -157,6 +158,9 @@ def page_start(weekday, day, month):
     lines.append('<script src="js.js"></script>')
     lines.append("</head>")
     lines.append("<body>")
+    lines.append('<p class="warning"> Information is stale</p>')
+    lines.append('<div id="content">')
+
     # page formatting
     lines.append("")
     return lines
