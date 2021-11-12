@@ -1,17 +1,28 @@
-#content {
+body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
     padding: 10px;
+    width: fit-content;
 }
 
-.endnote {
-    font-style: italic;
+.warning {
+    color: red;
+    display: none;
+    text-align: center;
+    padding-bottom: 10px;
 }
+
+.stale {
+    opacity: 30%;
+}
+
 .menu {
     padding-left: 10px;
 }
+
 p {
     line-height: 150%;
 }
+
 a.gmaps {
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg");
     background-repeat: no-repeat;
@@ -21,11 +32,19 @@ a.gmaps {
     display: inline-block;
     margin-bottom: -0.6em;
 }
-.stale {
-    opacity: 30%;
+
+.endnote {
+    padding-top: 20px;
+    font-style: italic;
 }
 
-.warning {
-    color: red;
-    display: none;
+.endnote, .issue {
+    font-family: initial;
+    text-align: center;
 }
+
+
+
+
+
+
