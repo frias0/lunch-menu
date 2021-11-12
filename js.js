@@ -1,5 +1,5 @@
 window.onload = (event) => {
-   var wrongDate = new Date(Date.parse(/(\d\d\d\d-\d\d-\d\d)/.exec(document.querySelector(".endnote").textContent)[0]))
+   var wrongDate = new Date(Date.parse(/(\d\d\d\d-\d\d-\d\d)/.exec(document.querySelector(".updated").textContent)[0]))
    var wrongDateUTC = new Date(wrongDate.toLocaleString("sv-SE",{timeZone: "UTC"}))
    var wrongDateLocal = new Date(wrongDate.toLocaleString("sv-SE",{timeZone: "Europe/Stockholm"}))
    var offset = wrongDateUTC.getTime()-wrongDateLocal.getTime()
