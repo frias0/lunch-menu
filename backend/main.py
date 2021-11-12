@@ -139,7 +139,7 @@ def page_end():
         datetime.now(pytz.timezone("Europe/Stockholm")).strftime("%Y-%m-%d %H:%M:%S") +
         '</div>'
     )
-    lines.append('<div class="issue"><a href="https://github.com/frias0/lunch-menu/issues/new?assignees=&labels=enhancement&template=request-restaurant.md&title=%5BRESTAURANT%5D+Adding+X">Request restaurant here</a></div>)
+    lines.append('<div class="issue"><a href="https://github.com/frias0/lunch-menu/issues/new?assignees=&labels=enhancement&template=request-restaurant.md&title=%5BRESTAURANT%5D+Adding+X">Request restaurant here</a></div>')
     lines.append("</body>")
     lines.append("</html>")
     return lines
