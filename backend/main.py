@@ -154,6 +154,7 @@ def page_start(weekday, day, month):
     lines.append("<title>Dagens mat - {}</title>".format(date))
     lines.append('<link href="styles.css" rel="stylesheet" type="text/css">')
     lines.append('<style type="text/css"></style>')
+    lines.append('<script src="js.js"></script>')
     lines.append("</head>")
     lines.append("<body>")
     # page formatting
