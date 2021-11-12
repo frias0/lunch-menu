@@ -368,6 +368,22 @@ def parse_nanna(res_data):
     return data
 
 @restaurant
+def parse_rudbeck(res_data):
+    """
+    Parse the menu of Bistro Rudbeck
+    """
+    data = {"menu": []}
+    soup = get_parser(res_data["menuUrl"])
+
+    days = soup.find_all("div", {"class": "container-fluid no-print"})
+    day = days[get_weekdigit()]
+    dishes = day.find_all("span")[3:]
+    for dish in dishes:
+        data["menu"].append(dish.get_text().strip())
+
+    return data
+
+@restaurant
 def parse_kvartersmenyn(res_data):
     """
     Parse the menus on kvartersmenyn.se
@@ -382,29 +398,12 @@ def parse_kvartersmenyn(res_data):
             if line.name is not None:
                 if "br" in line.name:
                     continue
-                if "strong" in line.name:
+                if "strong" in line.name or "b" in line.name:
                     day=False
                     break
-            data["menu"].append(line)
+            data["menu"].append(line.string)
         if get_weekday().capitalize() in line:
             day = True
-    return data
-
-
-@restaurant
-def parse_rudbeck(res_data):
-    """
-    Parse the menu of Bistro Rudbeck
-    """
-    data = {"menu": []}
-    soup = get_parser(res_data["menuUrl"])
-
-    days = soup.find_all("div", {"class": "container-fluid no-print"})
-    day = days[get_weekdigit()]
-    dishes = day.find_all("span")[3:]
-    for dish in dishes:
-        data["menu"].append(dish.get_text().strip())
-
     return data
 
 
@@ -467,7 +466,7 @@ def parse_tastorykista(res_data):
             day = BeautifulSoup(child.find("description").string, "html.parser")
             for dish in day.find("p").children:
                 if dish.name is None:
-                    data["menu"].append(dish)
+                    data["menu"].append(dish.string)
 
     return data
 
@@ -484,6 +483,7 @@ def parse_glaze(res_data):
     for day in menu.find_all("div", {"class", "day"}):
         if get_weekday().capitalize() in day.find("h2"):
             for dish in day.find_all("div", {"class", "title"}):
-                data["menu"].append(dish.text.strip())
+                if len(dish.text.strip()) > 1:
+                    data["menu"].append(dish.text.strip())
             break
     return data
