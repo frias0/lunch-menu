@@ -33,12 +33,12 @@ a.gmaps {
     margin-bottom: -0.6em;
 }
 
-.endnote {
+.updated {
     padding-top: 20px;
     font-style: italic;
 }
 
-.endnote, .issue {
+.updated, .issue {
     font-family: initial;
     text-align: center;
 }
