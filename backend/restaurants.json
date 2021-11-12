@@ -64,6 +64,19 @@
       "osm": "http://www.openstreetmap.org/#map=19/59.4017353/17.9441746",
       "gmaps": "https://goo.gl/maps/hrip3hnk7Vq5L8zD8",
       "region": "Kista"
+    },
+    {
+      "coordinate": [
+        59.4059352,
+        17.9483398
+      ],
+      "homepage": "http://theplace.kvartersmenyn.se/",
+      "identifier": "theplace",
+      "menuUrl": "http://theplace.kvartersmenyn.se/",
+      "name": "The Place - World class",
+      "osm": "http://www.openstreetmap.org/#map=19/59.4059352/17.9483398",
+      "gmaps": "https://maps.app.goo.gl/zyHYWm13izZsMRmD7",
+      "region": "Kista"
     }
   ]
 }
