@@ -98,9 +98,9 @@ def activate_parsers(restaurants, restaurant_data):
             MAPPER[restaurant] = ps.parse_kvartersmenyn
         data = MAPPER[restaurant](restaurant_data[restaurant])
         output.append(
-            f"""<div class="title"><a href="{data['url']}">{data['title']}</a>"""
+            f"""<div class="title">\n\t<a href="{data['url']}">{data['title']}</a>"""
         )
-        output.append(f"""<a class="gmaps" href="{data['map_url']}"></a></div>""")
+        output.append(f"""\t<a class="gmaps" href="{data['map_url']}"></a></div>""")
         if "menu" in data:
             output.append('<div class="menu">')
             output.append("<p>")
