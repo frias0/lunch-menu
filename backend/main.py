@@ -97,10 +97,10 @@ def activate_parsers(restaurants, restaurant_data):
         if ".kvartersmenyn.se" in restaurant_data[restaurant]["menuUrl"]:
             MAPPER[restaurant] = ps.parse_kvartersmenyn
         data = MAPPER[restaurant](restaurant_data[restaurant])
+        output.append(f"""<div class="title">\n\t<a class="gmaps" href="{data['map_url']}"></a>""")
         output.append(
-            f"""<div class="title">\n\t<a href="{data['url']}">{data['title']}</a>"""
+            f"""\t<a href="{data['url']}">{data['title']}</a></div>"""
         )
-        output.append(f"""\t<a class="gmaps" href="{data['map_url']}"></a></div>""")
         if "menu" in data:
             output.append('<div class="menu">')
             output.append("<p>")
@@ -159,6 +159,8 @@ def page_start(weekday, day, month):
     lines.append('<link href="styles.css" rel="stylesheet" type="text/css">')
     lines.append('<style type="text/css"></style>')
     lines.append('<script src="js.js"></script>')
+    lines.append('<meta name="viewport" content="width=device-width, initial-scale=1">')
+    lines.append('<meta name="color-scheme" content="dark light">')
     lines.append("</head>")
     lines.append("<body>")
     lines.append('<p class="warning"> Information is stale</p>')
