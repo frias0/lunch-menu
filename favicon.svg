@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="master-artboard" viewBox="0 0 980 980" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="enable-background:new 0 0 336 235.2;" width="980px" height="980px"><rect id="ee-background" x="0" y="0" width="980" height="980" style="fill: white; fill-opacity: 0; pointer-events: none;"/><defs><marker id="ArrowEnd" markerHeight="3" markerUnits="strokeWidth" markerWidth="4" orient="auto" refX="0" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 0 L 10 5 L 0 10 z" id="path2353" style="fill: black;"/>
+    </marker><marker id="ArrowStart" markerHeight="3" markerUnits="strokeWidth" markerWidth="4" orient="auto" refX="10" refY="5" viewBox="0 0 10 10">
+      <path d="M 10 0 L 0 5 L 10 10 z" id="path2356" style="fill: black;"/>
+    </marker></defs><g transform="matrix(2.075470924377442, 0, 0, 2.075470924377442, 234.40184091494928, 2.4401931762695597)"><metadata>
+    
+  </metadata>
+  <style>
+    path { fill: black; }
+    @media (prefers-color-scheme: dark) {
+      path { fill: white; }
+    }
+  </style>
+  <g id="g2358">
+    <path d="M 115.158 154.044C 115.158 169.378 101.188 185.794 83.074 185.794L 83.074 444.627C 83.074 481.367 32.993 481.367 32.993 444.627L 32.993 185.794C 15.353 185.794 0 172.211 0 151.857L 0 9.41901C 0 -2.97998 17.92 -3.45898 17.92 9.89801L 17.92 115.196L 32.92 115.196L 32.92 8.94C 32.92 -2.45599 50.17 -3.18799 50.17 9.41901L 50.17 115.196L 65.67 115.196L 65.67 9.065C 65.67 -2.83398 82.42 -3.31299 82.42 9.54401L 82.42 115.196L 97.67 115.196L 97.67 9.065C 97.67 -2.70898 115.167 -3.18799 115.167 9.54401L 115.158 154.044z" id="path2360" style="stroke: none;"/>
+    <path d="M 248.746 42.524L 248.746 444.501C 248.746 480.434 198.569 479.902 198.569 444.501L 198.569 285.006L 171.85 285.006L 171.85 42.524C 171.85 -13.921 248.746 -13.921 248.746 42.524z" id="path2362" style="stroke: none;"/>
+  </g></g></svg>
