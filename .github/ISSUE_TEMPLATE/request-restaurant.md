@@ -1,7 +1,7 @@
 ---
 name: Request restaurant
 about: 'Adding new restaurant '
-title: "[RESTURANT] Adding X"
+title: "[RESTAURANT] Adding X"
 labels: enhancement
 assignees: ''
 
