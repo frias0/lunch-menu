@@ -426,7 +426,7 @@ def parse_kvartersmenyn(res_data):
                     day=False
                     break
             data["menu"].append(line.string)
-        if get_weekday().lower() in line.string.lower():
+        if line.string is not None and get_weekday().lower() in line.string.lower():
             day = True
     return data
 
