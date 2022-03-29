@@ -85,7 +85,7 @@ KI = ("jorpes", "glada", "haga", "hjulet", "jons", "livet", "nanna", "svarta")
 
 UU = ("bikupan", "dufva", "hubben", "rudbeck", "tallrik")
 
-KA = ("uppereast", "nordicforum", "theplace", "eaterynod","glaze")
+KA = ("uppereast", "nordicforum", "theplace", "eaterynod", "tastorykista","glaze")
 
 
 def activate_parsers(restaurants, restaurant_data):
@@ -222,7 +222,7 @@ def gen_kista_menu():
     """
     output = ""
     output += "\n".join(page_start(ps.get_weekday(), str(ps.get_day()), ps.get_month()))
-    output += activate_parsers(KISTA, REST_DATA)
+    output += activate_parsers(KA, REST_DATA)
     output += "\n".join(page_end())
 
     sys.stderr.write(output + "\n")
