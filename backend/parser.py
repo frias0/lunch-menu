@@ -74,7 +74,7 @@ def get_parser(url: str) -> BeautifulSoup:
     """
     page_req = requests.get(url)
     if page_req.status_code != 200:
-        raise IOError("Url " + str(url) + "Bad HTTP response code: " + str(page_req.status_code))
+        raise IOError("Url " + str(url) + " Bad HTTP response code: " + str(page_req.status_code) + " " +page_req.text)
 
     return BeautifulSoup(page_req.text, "html.parser")
 
