@@ -38,6 +38,7 @@ import sys
 import html
 
 import requests
+import cloudscraper
 from bs4 import BeautifulSoup
 from collections import defaultdict
 
@@ -72,10 +73,11 @@ def get_parser(url: str) -> BeautifulSoup:
     """
     Request page and create Beautifulsoup object
     """
-    page_req = requests.get(url)
+    browser = {"browser": "chrome", "mobile": False, "platform": "windows"}
+    scraper = cloudscraper.create_scraper(browser=browser)
+    page_req = scraper.get(url)
     if page_req.status_code != 200:
         raise IOError("Url " + str(url) + " Bad HTTP response code: " + str(page_req.status_code) + " " +page_req.text)
-
     return BeautifulSoup(page_req.text, "html.parser")
 
 
@@ -412,22 +414,27 @@ def parse_kvartersmenyn(res_data):
     """
     Parse the menus on kvartersmenyn.se
     """
-    data = {"menu": []}
-    soup = get_parser(res_data["menuUrl"])
+    try:
+        data = {"menu": []}
+        soup = get_parser(res_data["menuUrl"])
 
-    menu = soup.find("div", {"class": "meny"})
-    day = False
-    for line in menu.contents:
-        if day:
-            if line.name is not None:
-                if "br" in line.name:
-                    continue
-                if "strong" in line.name or "b" in line.name:
-                    day=False
-                    break
-            data["menu"].append(line.string)
-        if line.string is not None and get_weekday().lower() in line.string.lower():
-            day = True
+        menu = soup.find("div", {"class": "meny"})
+        day = False
+        for line in menu.contents:
+            if day:
+                if line.name is not None:
+                    if "br" in line.name:
+                        continue
+                    if "strong" in line.name or "b" in line.name:
+                        day=False
+                        break
+                data["menu"].append(line.string)
+            if line.string is not None and get_weekday().lower() in line.string.lower():
+                day = True
+    except Exception as e:
+        print(res_data, file=sys.stderr)
+        print(soup, file=sys.stderr)
+        print(e, file=sys.stderr)
     return data
 
 
@@ -458,13 +465,12 @@ def parse_tastorykista(res_data):
     """
     data = {"menu": []}
     soup = get_parser(res_data["menuUrl"])
-
     menu = soup.find("channel")
     for child in menu.find_all("item"):
         if get_weekday().capitalize() in child.find("title").string:
             day = BeautifulSoup(child.find("description").string, "html.parser")
-            for dish in day.find("p").children:
-                if dish.name is None:
+            for dish in day.find_all("p"):
+                if "ändringar" not in dish.string and "Till dagens" not in dish.string and dish.string != " ":
                     data["menu"].append(dish.string)
 
     return data
