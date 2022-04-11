@@ -78,6 +78,7 @@ MAPPER = {
     "nordicforum": ps.parse_nordicforum,
     "tastorykista": ps.parse_tastorykista,
     "glaze": ps.parse_glaze
+
 }
 
 
@@ -85,7 +86,7 @@ KI = ("jorpes", "glada", "haga", "hjulet", "jons", "livet", "nanna", "svarta")
 
 UU = ("bikupan", "dufva", "hubben", "rudbeck", "tallrik")
 
-KA = ("uppereast", "nordicforum", "theplace", "eaterynod", "tastorykista","glaze")
+KA = ("uppereast", "nordicforum", "eaterynod", "tastorykista", "glaze", "theplace", "wildkitchen")
 
 
 def activate_parsers(restaurants, restaurant_data):

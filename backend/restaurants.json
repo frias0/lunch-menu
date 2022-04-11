@@ -77,6 +77,19 @@
       "osm": "http://www.openstreetmap.org/#map=19/59.4059352/17.9483398",
       "gmaps": "https://maps.app.goo.gl/zyHYWm13izZsMRmD7",
       "region": "Kista"
+    },
+    {
+      "coordinate": [
+        59.404810,
+        17.945786
+      ],
+      "homepage": "https://wildkitchen.kvartersmenyn.se/",
+      "identifier": "wildkitchen",
+      "menuUrl": "https://wildkitchen.kvartersmenyn.se/",
+      "name": "Wild kitchen",
+      "osm": "https://www.openstreetmap.org/#map=18/59.404810/17.945786",
+      "gmaps": "https://goo.gl/maps/vZw4MDrFgmTYT5Qw8",
+      "region": "Kista"
     }
   ]
 }
