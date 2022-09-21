@@ -470,8 +470,10 @@ def parse_tastorykista(res_data):
         if get_weekday().capitalize() in child.find("title").string:
             day = BeautifulSoup(child.find("description").string, "html.parser")
             for dish in day.find_all("p"):
-                if "ändringar" not in dish.string and "Till dagens" not in dish.string and dish.string != " ":
-                    data["menu"].append(dish.string)
+                if dish.string != " ":
+                    dish_string = next(dish.stripped_strings)
+                    if "ändringar" not in dish_string and "Till dagens" not in dish_string and dish_string != " ":
+                        data["menu"].append(dish_string)
 
     return data
 
