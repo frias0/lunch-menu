@@ -140,7 +140,8 @@ def page_end():
         datetime.now(pytz.timezone("Europe/Stockholm")).strftime("%Y-%m-%d %H:%M:%S") +
         '</div>'
     )
-    lines.append('<div class="issue">')
+    lines.append('<div class="footer">')
+    lines.append('<a id="copy_button" href="#" onclick="copyToClipboard(); return false;">Copy to clipboard</a>')
     lines.append('<a href="https://github.com/frias0/lunch-menu/issues/new?assignees=&labels=enhancement&template=request-restaurant.md&title=%5BRESTAURANT%5D+Adding+X">Add restaurant</a>')
     lines.append('</div>')
     lines.append("</body>")
