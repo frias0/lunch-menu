@@ -41,6 +41,19 @@
     },
     {
       "coordinate": [
+        59.4070624,
+        17.9431243
+      ],
+      "homepage": "https://eatery.se/kista-gate",
+      "identifier": "eaterygate",
+      "menuUrl": "https://eaterykistagate.kvartersmenyn.se/",
+      "name": "Eatery Gate",
+      "osm": "http://www.openstreetmap.org/#map=19/59.4098401/17.948171",
+      "gmaps": "https://g.page/eatery-kista-gate",
+      "region": "Kista"
+    },
+    {
+      "coordinate": [
         59.4051995,
         17.9499051
       ],
