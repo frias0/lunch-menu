@@ -57,10 +57,10 @@
         59.4051995,
         17.9499051
       ],
-      "homepage": "https://www.tastory.com/sv/vara-restauranger--cafeer/restauranger/tastory-kista/",
+      "homepage": "https://www.compass-group.se/restauranger-och-menyer/foodandco/food--co-timebuilding/",
       "identifier": "tastorykista",
-      "menuUrl": "https://www.tastory.com/modules/MenuRss/MenuRss/CurrentWeek?costNumber=6209&language=sv",
-      "name": "Tastory Kista",
+      "menuUrl": "https://www.compass-group.se/menuapi/feed/rss/current-week?costNumber=6209&language=sv",
+      "name": "Food & Co Timebuilding (ex tastory)",
       "osm": "http://www.openstreetmap.org/#map=19/59.4051995/17.9499051",
       "gmaps": "https://goo.gl/maps/iWLKnkp519uWTM6S7",
       "region": "Kista"
