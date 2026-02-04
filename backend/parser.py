@@ -76,9 +76,10 @@ def get_parser(url: str) -> BeautifulSoup:
     browser = {"browser": "chrome", "mobile": False, "platform": "windows"}
     scraper = cloudscraper.create_scraper(browser=browser)
     page_req = scraper.get(url)
+    text = page_req.text.replace("<br>","<br/>")
     if page_req.status_code != 200:
         raise IOError("Url " + str(url) + " Bad HTTP response code: " + str(page_req.status_code) + " " +page_req.text)
-    return BeautifulSoup(page_req.text, "html.parser")
+    return BeautifulSoup(text, "html.parser")
 
 
 def fix_bad_symbols(text):
@@ -433,7 +434,7 @@ def parse_kvartersmenyn(res_data):
                 day = True
     except Exception as e:
         print(res_data, file=sys.stderr)
-        print(soup, file=sys.stderr)
+        #print(soup, file=sys.stderr)
         print(e, file=sys.stderr)
     return data
 
@@ -454,7 +455,7 @@ def parse_nordicforum(res_data):
                 next(itr)
                 for item in next(itr):
                     if item.name:
-                        data["menu"].append(item.find("td", {"class": "td_title"}).text.strip())
+                        data["menu"].append(fix_bad_symbols(item.find("td", {"class": "td_title"}).text))
 
     return data
 
