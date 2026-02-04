@@ -77,7 +77,8 @@ MAPPER = {
     "tallrik": ps.parse_tallrik,
     "nordicforum": ps.parse_nordicforum,
     "tastorykista": ps.parse_tastorykista,
-    "glaze": ps.parse_glaze
+    "glaze": ps.parse_glaze,
+    "uppereast": ps.parse_uppereast
 
 }
 

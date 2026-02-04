@@ -440,6 +440,26 @@ def parse_kvartersmenyn(res_data):
 
 
 @restaurant
+def parse_uppereast(res_data):
+    """
+    Parse the menu of upper east
+    """
+    data = {"menu": []}
+    soup = get_parser(res_data["menuUrl"])
+
+    menu = soup.find("table", {"class": "lunch_menu"})
+    itr = iter(menu.children)
+    for child in itr:
+        if child.name == "thead":
+            if get_weekday().capitalize() in child.find("h3").string:
+                next(itr)
+                for item in next(itr):
+                    if item.name:
+                        data["menu"].append(fix_bad_symbols(item.find("td", {"class": "td_title"}).text))
+
+    return data
+
+@restaurant
 def parse_nordicforum(res_data):
     """
     Parse the menu of nordic forum
