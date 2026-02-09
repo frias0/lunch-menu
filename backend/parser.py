@@ -77,6 +77,7 @@ def get_parser(url: str) -> BeautifulSoup:
     scraper = cloudscraper.create_scraper(browser=browser)
     page_req = scraper.get(url)
     text = page_req.text.replace("<br>","<br/>")
+    text = fix_bad_symbols(text)
     if page_req.status_code != 200:
         raise IOError("Url " + str(url) + " Bad HTTP response code: " + str(page_req.status_code) + " " +page_req.text)
     return BeautifulSoup(text, "html.parser")

@@ -87,7 +87,7 @@ KI = ("jorpes", "glada", "haga", "hjulet", "jons", "livet", "nanna", "svarta")
 
 UU = ("bikupan", "dufva", "hubben", "rudbeck", "tallrik")
 
-KA = ("uppereast", "nordicforum", "tastorykista", "eaterygate", "eaterynod", "glaze")
+KA = ("uppereast", "nordicforum", "tastorykista", "eaterygate")
 
 
 def activate_parsers(restaurants, restaurant_data):
